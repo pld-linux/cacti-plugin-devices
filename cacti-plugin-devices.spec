@@ -19,18 +19,22 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		webcactipluginroot /usr/share/cacti/plugins/%{namesrc}
 
 %description
-Plugin for Cacti -This is a simple plugin for the Cacti Plugin 
-Architecture for Cacti 0.8.x.
-Wanted a tab to show the current availability of his devices,
+This is a simple plugin for the Cacti Plugin Architecture for Cacti
+0.8.x. Wanted a tab to show the current availability of his devices,
 but without the ability to edit the devices. This is a hacked up copy
-of the 'hosts.php' page that forms the Devices page within the console.
-All the editing code is removed, and the device devices go to the Graph
-Preview mode, with that device as the filter (so you see only that
-device's graphs).
-
+of the 'hosts.php' page that forms the Devices page within the
+console. All the editing code is removed, and the device devices go to
+the Graph Preview mode, with that device as the filter (so you see
+only that device's graphs).
 
 %description -l pl
-Wtyczka do Cacti - 
+To jest prosta wtyczka dla architektury wtyczek Cacti dla Cacti 0.8.x.
+Ma byæ zak³adk± pokazuj±c± aktualn± dostêpno¶æ urz±dzeñ, ale bez
+mo¿liwo¶ci edycji urz±dzeñ. Jest to zmodyfikowana kopia strony
+'hosts.php' tworz±cej stronê Devices wewn±trz konsoli. Ca³y kod do
+modyfikacji ustawieñ zosta³ usuniêty, a urz±dzenie przechodzi do
+trybu podgl±du wykresu (Graph Preview) z ustawionym tym urz±dzeniem
+jako filtrem (wiêc widaæ tylko wykres dla tego urz±dzenia).
 
 %prep
 %setup -q -n %{namesrc}
