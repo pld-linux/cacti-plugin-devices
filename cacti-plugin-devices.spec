@@ -1,7 +1,7 @@
 %define		namesrc	devices
 %include	/usr/lib/rpm/macros.perl
 Summary:	Plugin for Cacti - Devices
-Summary(pl.UTF-8):   Wtyczka do Cacti - Devices
+Summary(pl.UTF-8):	Wtyczka do Cacti - Devices
 Name:		cacti-plugin-devices
 Version:	0.4
 Release:	0.1
