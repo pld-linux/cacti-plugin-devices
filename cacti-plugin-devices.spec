@@ -1,7 +1,7 @@
 %define		namesrc	devices
 %include	/usr/lib/rpm/macros.perl
 Summary:	Plugin for Cacti - Devices
-Summary(pl):	Wtyczka do Cacti - Devices
+Summary(pl.UTF-8):   Wtyczka do Cacti - Devices
 Name:		cacti-plugin-devices
 Version:	0.4
 Release:	0.1
@@ -27,14 +27,14 @@ console. All the editing code is removed, and the device devices go to
 the Graph Preview mode, with that device as the filter (so you see
 only that device's graphs).
 
-%description -l pl
+%description -l pl.UTF-8
 To jest prosta wtyczka dla architektury wtyczek Cacti dla Cacti 0.8.x.
-Ma byæ zak³adk± pokazuj±c± aktualn± dostêpno¶æ urz±dzeñ, ale bez
-mo¿liwo¶ci edycji urz±dzeñ. Jest to zmodyfikowana kopia strony
-'hosts.php' tworz±cej stronê Devices wewn±trz konsoli. Ca³y kod do
-modyfikacji ustawieñ zosta³ usuniêty, a urz±dzenie przechodzi do
-trybu podgl±du wykresu (Graph Preview) z ustawionym tym urz±dzeniem
-jako filtrem (wiêc widaæ tylko wykres dla tego urz±dzenia).
+Ma byÄ‡ zakÅ‚adkÄ… pokazujÄ…cÄ… aktualnÄ… dostÄ™pnoÅ›Ä‡ urzÄ…dzeÅ„, ale bez
+moÅ¼liwoÅ›ci edycji urzÄ…dzeÅ„. Jest to zmodyfikowana kopia strony
+'hosts.php' tworzÄ…cej stronÄ™ Devices wewnÄ…trz konsoli. CaÅ‚y kod do
+modyfikacji ustawieÅ„ zostaÅ‚ usuniÄ™ty, a urzÄ…dzenie przechodzi do
+trybu podglÄ…du wykresu (Graph Preview) z ustawionym tym urzÄ…dzeniem
+jako filtrem (wiÄ™c widaÄ‡ tylko wykres dla tego urzÄ…dzenia).
 
 %prep
 %setup -q -n %{namesrc}
