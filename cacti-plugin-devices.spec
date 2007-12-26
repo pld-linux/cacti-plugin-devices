@@ -41,7 +41,7 @@ jako filtrem (więc widać tylko wykres dla tego urządzenia).
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{webcactipluginroot}
-cp -aRf * $RPM_BUILD_ROOT%{webcactipluginroot}
+cp -a * $RPM_BUILD_ROOT%{webcactipluginroot}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
