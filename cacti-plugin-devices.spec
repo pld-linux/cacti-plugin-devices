@@ -4,10 +4,9 @@ Summary:	Plugin for Cacti - Devices
 Summary(pl.UTF-8):	Wtyczka do Cacti - Devices
 Name:		cacti-plugin-devices
 Version:	0.4
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Applications/WWW
-#!!!!problem with version
 Source0:	http://wotsit.thingy.com/haj/cacti/%{namesrc}-%{version}.zip
 # Source0-md5:	c2464ec843cc6d3d464ca179cb4b053a
 URL:		http://wotsit.thingy.com/haj/cacti/devices-plugin.html
@@ -49,5 +48,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%doc LICENSE README 
 %{webcactipluginroot}
