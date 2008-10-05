@@ -1,13 +1,13 @@
-%define		namesrc	devices
+%define		plugin devices
 %include	/usr/lib/rpm/macros.perl
 Summary:	Plugin for Cacti - Devices
 Summary(pl.UTF-8):	Wtyczka do Cacti - Devices
-Name:		cacti-plugin-devices
+Name:		cacti-plugin-%{plugin}
 Version:	0.4
 Release:	1
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	http://wotsit.thingy.com/haj/cacti/%{namesrc}-%{version}.zip
+Source0:	http://wotsit.thingy.com/haj/cacti/%{plugin}-%{version}.zip
 # Source0-md5:	c2464ec843cc6d3d464ca179cb4b053a
 URL:		http://wotsit.thingy.com/haj/cacti/devices-plugin.html
 BuildRequires:	rpm-perlprov
@@ -15,7 +15,8 @@ Requires:	cacti
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		webcactipluginroot /usr/share/cacti/plugins/%{namesrc}
+%define		cactidir		/usr/share/cacti
+%define		plugindir		%{cactidir}/plugins/%{plugin}
 
 %description
 This is a simple plugin for the Cacti Plugin Architecture for Cacti
@@ -31,21 +32,21 @@ To jest prosta wtyczka dla architektury wtyczek Cacti dla Cacti 0.8.x.
 Ma być zakładką pokazującą aktualną dostępność urządzeń, ale bez
 możliwości edycji urządzeń. Jest to zmodyfikowana kopia strony
 'hosts.php' tworzącej stronę Devices wewnątrz konsoli. Cały kod do
-modyfikacji ustawień został usunięty, a urządzenie przechodzi do
-trybu podglądu wykresu (Graph Preview) z ustawionym tym urządzeniem
-jako filtrem (więc widać tylko wykres dla tego urządzenia).
+modyfikacji ustawień został usunięty, a urządzenie przechodzi do trybu
+podglądu wykresu (Graph Preview) z ustawionym tym urządzeniem jako
+filtrem (więc widać tylko wykres dla tego urządzenia).
 
 %prep
-%setup -q -n %{namesrc}
+%setup -q -n %{plugin}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{webcactipluginroot}
-cp -a * $RPM_BUILD_ROOT%{webcactipluginroot}
+install -d $RPM_BUILD_ROOT%{plugindir}
+cp -a . $RPM_BUILD_ROOT%{plugindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{webcactipluginroot}
+%{plugindir}
