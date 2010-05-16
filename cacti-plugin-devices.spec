@@ -11,6 +11,7 @@ Source0:	http://wotsit.thingy.com/haj/cacti/%{plugin}-%{version}.zip
 # Source0-md5:	c2464ec843cc6d3d464ca179cb4b053a
 URL:		http://wotsit.thingy.com/haj/cacti/devices-plugin.html
 BuildRequires:	rpm-perlprov
+BuildRequires:	unzip
 Requires:	cacti
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
