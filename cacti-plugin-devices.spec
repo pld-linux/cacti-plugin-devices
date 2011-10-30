@@ -1,18 +1,21 @@
 %define		plugin devices
-%include	/usr/lib/rpm/macros.perl
+%define		php_min_version 5.0.0
+%include	/usr/lib/rpm/macros.php
 Summary:	Plugin for Cacti - Devices
 Summary(pl.UTF-8):	Wtyczka do Cacti - Devices
 Name:		cacti-plugin-%{plugin}
 Version:	0.4
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://wotsit.thingy.com/haj/cacti/%{plugin}-%{version}.zip
 # Source0-md5:	c2464ec843cc6d3d464ca179cb4b053a
 URL:		http://wotsit.thingy.com/haj/cacti/devices-plugin.html
-BuildRequires:	rpm-perlprov
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	unzip
 Requires:	cacti
+Requires:	php-common >= 4:%{php_min_version}
+Requires:	php-pcre
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,12 +41,12 @@ podglądu wykresu (Graph Preview) z ustawionym tym urządzeniem jako
 filtrem (więc widać tylko wykres dla tego urządzenia).
 
 %prep
-%setup -q -n %{plugin}
+%setup -qc
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{plugindir}
-cp -a . $RPM_BUILD_ROOT%{plugindir}
+cp -a %{plugin}/* $RPM_BUILD_ROOT%{plugindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
